@@ -1,0 +1,18 @@
+services:
+  - type: web_service
+    name: biznooks-backend
+    env: docker
+    region: oregon
+    branch: main
+    repo: SemBros90/biznooks
+    dockerfilePath: Dockerfile
+    plan: free
+
+  - type: static_site
+    name: biznooks-frontend
+    env: node
+    branch: main
+    repo: SemBros90/biznooks
+    buildCommand: 'cd frontend && npm ci && npm run build'
+    publishPath: 'frontend/build'
+    plan: free
