@@ -45,3 +45,23 @@ npm start
 ```
 
 More details are in `docs/USAGE.md` and `.env.example`.
+
+Running on Replit or other single-process hosts
+----------------------------------------------
+
+You can import this repo into Replit (or similar code-run hosts) and run the backend directly.
+
+- Replit will use the `start-replit.sh` script (configured in `.replit`) which starts the FastAPI app
+	with an on-disk SQLite DB by default.
+- If you need Redis or MinIO in that environment, configure external services and set the appropriate
+	environment variables in the Replit Secrets settings (`REDIS_URL`, `S3_ENDPOINT_URL`, `S3_BUCKET`,
+	`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`).
+
+To run locally with the Replit-style startup (for testing):
+
+```bash
+bash start-replit.sh
+```
+
+Note: Do not commit secrets or private keys. Use `.env.example` as reference and set actual values
+in the host's secret settings.
