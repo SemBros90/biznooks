@@ -1,6 +1,7 @@
 {
   "name": "biznooks-frontend",
   "version": "0.1.0",
+  "homepage": "https://sembros90.github.io/biznooks",
   "private": true,
   "dependencies": {
     "react": "18.2.0",
